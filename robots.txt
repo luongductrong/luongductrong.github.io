@@ -1,2 +1,3 @@
 user-agent: *
 Disallow: /googlebc556dca81677489.html
+Disallow: /w3-band
