@@ -22,25 +22,23 @@ jobs:
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
-        working-directory: about-me-vue # Chỉ định thư mục con chứa dự án
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-        working-directory: about-me-vue # Chỉ định thư mục con chứa dự án
 
-      - name: Install step
-        run: "yarn install"
-        working-directory: about-me-vue # Chỉ định thư mục con chứa dự án
+      - name: Install dependencies
+        run: yarn install
+        working-directory: about-me-vue # Run `yarn install` in the `about-me-vue` directory
 
-      - name: Build step
-        run: "yarn build"
-        working-directory: about-me-vue # Chỉ định thư mục con chứa dự án
+      - name: Build project
+        run: yarn build
+        working-directory: about-me-vue # Run `yarn run build` in the `about-me-vue` directory
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "ldt"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "about-me-vue/dist" # Chỉ định thư mục build cần upload
+          root: "about-me-vue/dist" # Specify the build folder to upload
