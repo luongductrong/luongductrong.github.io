@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://github.githubassets.com/favicons/favicon-dark.svg"
+    />
+    <link
+      rel="alternate icon"
+      type="image/png"
+      href="https://github.githubassets.com/favicons/favicon-dark.png"
+    />
+    <title>404 - Not Found</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.5;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f6f8fa;
+        color: #24292f;
+      }
+      .container {
+        text-align: center;
+        max-width: 600px;
+        padding: 20px;
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+      .logo img {
+        width: 80px;
+        height: auto;
+        mix-blend-mode: multiply;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        color: #24292f;
+        background-color: #f6f8fa;
+        transition: background-color 0.2s;
+      }
+      .btn:hover {
+        background-color: #eaeef2;
+      }
+      .btn-primary {
+        background-color: #2da44e;
+        color: #fff;
+        border-color: #2da44e;
+      }
+      .btn-primary:hover {
+        background-color: #22863a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          alt="GitHub Logo"
+        />
+      </div>
+      <h1>404 - Page Not Found</h1>
+      <p>
+        It seems you've found a page that doesn't exist.<br />Trang bạn đang tìm
+        kiếm không tồn tại.
+      </p>
+      <div class="btn-group">
+        <a href="https://luongductrong.github.io/" class="btn btn-primary"
+          >Go to Home / Về Trang Chủ</a
+        >
+        <a href="https://github.com/luongductrong/" class="btn"
+          >View GitHub Profile / Trang Cá Nhân</a
+        >
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function updateFavicon() {
+      const iconSvg = document.querySelector("link[rel='icon']");
+      const iconPng = document.querySelector("link[rel='alternate icon']");
+
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        console.log("dark mode");
+        iconSvg.href =
+          "https://github.githubassets.com/favicons/favicon-dark.svg";
+        iconPng.href =
+          "https://github.githubassets.com/favicons/favicon-dark.png";
+      } else {
+        console.log("light mode");
+        iconSvg.href = "https://github.githubassets.com/favicons/favicon.svg";
+        iconPng.href = "https://github.githubassets.com/favicons/favicon.png";
+      }
+    }
+
+    updateFavicon();
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", updateFavicon);
+  </script>
+</html>
